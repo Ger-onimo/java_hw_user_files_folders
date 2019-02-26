@@ -1,7 +1,10 @@
 package com.example.userfilesfolders.components;
 
+import com.example.userfilesfolders.models.File;
 import com.example.userfilesfolders.models.Folder;
 import com.example.userfilesfolders.models.User;
+import com.example.userfilesfolders.repositories.FileRepository;
+import com.example.userfilesfolders.repositories.FolderRepository;
 import com.example.userfilesfolders.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -17,6 +20,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    FileRepository fileRepository;
+
     public DataLoader(){
 
     }
@@ -25,9 +31,19 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         User gerry = new User("Gerry");
         userRepository.save(gerry);
+        User ross = new User("Ross");
+        userRepository.save(ross);
+
 
         Folder topSecret = new Folder("Top Secret", gerry);
         folderRepository.save(topSecret);
+        Folder midSecret = new Folder("Mid Secret", gerry);
+        folderRepository.save(midSecret);
+        Folder bottomSecret = new Folder("Bottom Secret", gerry);
+        folderRepository.save(bottomSecret);
+
+        File sshhhh = new File("Sshhhh", "txt", 1400, topSecret );
+        fileRepository.save(sshhhh);
 
     }
 }
