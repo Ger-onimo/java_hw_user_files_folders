@@ -44,6 +44,12 @@ public class DataLoader implements ApplicationRunner {
 
         File sshhhh = new File("Sshhhh", "txt", 1400, topSecret );
         fileRepository.save(sshhhh);
+        File needToKnow = new File("Need to Know", "txt", 100, topSecret );
+        fileRepository.save(needToKnow);
+        File delsPuns = new File("Del's Puns", "txt", 5000, midSecret );
+        fileRepository.save(delsPuns);
+        File  forAllEyes = new File("For All Eyes", "txt", 5000, bottomSecret );
+        fileRepository.save(forAllEyes);
 
     }
 }
