@@ -15,7 +15,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    //////// TODO ONE TO MANY
+    //////// TODO ONE TO MANY FOLDERS
 
     private List<Folder> folders;
 
