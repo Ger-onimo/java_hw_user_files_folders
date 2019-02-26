@@ -19,7 +19,7 @@ public class User {
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")
-    private List<Folder> folders;
+    private List<Folder>folders;
 
     public User(String name) {
         this.name = name;
